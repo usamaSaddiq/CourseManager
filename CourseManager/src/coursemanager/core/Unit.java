@@ -1,4 +1,4 @@
-package coursemanager.CoreFunctionality;
+package coursemanager.core;
 
 import java.util.HashMap;
 
@@ -9,12 +9,12 @@ import java.util.HashMap;
 public class Unit {
     private int _id;
     private String _name;
-    HashMap<Integer,Unit> _preReqs;
+    HashMap<Integer,Integer> _preReqs;
     
     public Unit(){
         _id = 0;
         _name = "";
-        _preReqs = new HashMap<Integer,Unit>();
+        _preReqs = new HashMap<>();
     }
     public void setId(int id){
         if(id > 0){
@@ -29,8 +29,8 @@ public class Unit {
         this._name = name;
     }
     
-     public void setPreReqs(HashMap<Integer, Unit> preReqs){
-        this._preReqs = new HashMap <Integer, Unit> (preReqs);
+     public void setPreReqs(HashMap<Integer, Integer> preReqs){
+        this._preReqs = new HashMap <Integer, Integer> (preReqs);
     }
     public int getId(){
         return this._id;
@@ -38,7 +38,7 @@ public class Unit {
     public String getName(){
         return this._name;
     }
-    public HashMap<Integer,Unit> getPreReqs(){
+    public HashMap<Integer,Integer> getPreReqs(){
         return this._preReqs;
     }
 }
