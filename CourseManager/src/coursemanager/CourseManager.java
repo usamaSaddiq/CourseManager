@@ -15,7 +15,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author Evil Genious
+ * @author Usama Saddiq
  */
 public class CourseManager {
 

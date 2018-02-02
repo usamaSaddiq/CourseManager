@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  *
- * @author Evil Genious
+ * @author Usama Saddiq
  */
 public class Course {
     public HashMap<Integer, Unit> _units;
@@ -23,7 +23,9 @@ public class Course {
     public Course(){
         _units = new HashMap<>();
         loadUnits();
+        loadPreRequisites();
     }
+    
     public void loadUnits(){
         _units = new HashMap<>();
         
@@ -69,5 +71,45 @@ public class Course {
                 }
             }
         }  
+    }
+    
+    public void loadPreRequisites(){
+        BufferedReader br = null;
+        String line = "";
+        String csvSplitBy = ",";
+
+        try {
+            ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+            InputStream is = classloader.getResourceAsStream("resources/prerequisites.csv");
+            
+            br  = new BufferedReader(new InputStreamReader(is));
+            
+            //read the first line of prerequisites and ignore
+            line = br.readLine();
+            
+            while ((line = br.readLine()) != null) {
+
+                // use comma as separator
+                String []  courseData = line.split(csvSplitBy);
+                
+                int key = Integer.parseInt(courseData[0]);
+                int value = Integer.parseInt(courseData[1]);
+                _units.get(key).insertPreReq(key, value);
+                
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }
