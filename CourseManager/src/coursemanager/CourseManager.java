@@ -5,6 +5,14 @@
  */
 package coursemanager;
 
+import coursemanager.core.Course;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+
 /**
  *
  * @author Evil Genious
@@ -15,7 +23,7 @@ public class CourseManager {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Course test = new Course();
     }
     
 }
