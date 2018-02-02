@@ -1,15 +1,17 @@
 package coursemanager.core;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  *
- * @author Evil Genious
+ * @author Usama Saddiq
  */
 public class Unit {
     private int _id;
     private String _name;
-    HashMap<Integer,Integer> _preReqs;
+    HashMap<Integer,List<Integer>> _preReqs;
     
     public Unit(){
         _id = 0;
@@ -29,16 +31,18 @@ public class Unit {
         this._name = name;
     }
     
-     public void setPreReqs(HashMap<Integer, Integer> preReqs){
-        this._preReqs = new HashMap <Integer, Integer> (preReqs);
+     public void insertPreReq(int key,int value){
+         
+        this._preReqs.computeIfAbsent(key, k->new ArrayList<>()).add(value);
     }
+    
     public int getId(){
         return this._id;
     } 
     public String getName(){
         return this._name;
     }
-    public HashMap<Integer,Integer> getPreReqs(){
+    public HashMap<Integer,List<Integer>> getPreReqs(){
         return this._preReqs;
     }
 }
