@@ -11,12 +11,12 @@ import java.util.List;
 public class Unit {
     private int _id;
     private String _name;
-    HashMap<Integer,List<Integer>> _preReqs;
+    ArrayList<Integer> _preReqs;
     
     public Unit(){
         _id = 0;
         _name = "";
-        _preReqs = new HashMap<>();
+        _preReqs = new ArrayList<>();
     }
     public void setId(int id){
         if(id > 0){
@@ -33,7 +33,8 @@ public class Unit {
     
      public void insertPreReq(int key,int value){
          
-        this._preReqs.computeIfAbsent(key, k->new ArrayList<>()).add(value);
+        //computes if a key already exists otherwise inserts a new one and adds values
+        this._preReqs.add(value);
     }
     
     public int getId(){
@@ -42,7 +43,7 @@ public class Unit {
     public String getName(){
         return this._name;
     }
-    public HashMap<Integer,List<Integer>> getPreReqs(){
+    public ArrayList<Integer> getPreReqs(){
         return this._preReqs;
     }
 }
