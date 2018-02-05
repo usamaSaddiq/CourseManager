@@ -143,7 +143,8 @@ public class Course {
         return true;
     }
 
-    if(current.getPreReqs().contains(_currentCall) || _incomplete.contains(_currentCall)){
+    if(current.getPreReqs().contains(_currentCall) || current.getPreReqs().contains(current.getId()) ||
+       _incomplete.contains(_currentCall) || _incomplete.contains(current.getId())){
         if(!_incomplete.contains(_currentCall)){
             _incomplete.add(_currentCall);
         }

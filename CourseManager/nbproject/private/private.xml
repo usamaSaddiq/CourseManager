@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Evil%20Genious/Documents/NetBeansProjects/CourseManager/src/coursemanager/resources/courses.csv</file>
-            <file>file:/C:/Users/Evil%20Genious/Documents/NetBeansProjects/CourseManager/src/coursemanager/CourseManager.java</file>
-            <file>file:/C:/Users/Evil%20Genious/Documents/NetBeansProjects/CourseManager/src/coursemanager/CoreFunctionality/Unit.java</file>
-            <file>file:/C:/Users/Evil%20Genious/Documents/NetBeansProjects/CourseManager/src/coursemanager/resources/prerequisites.csv</file>
+            <file>file:/C:/Users/Evil%20Genious/Documents/GitHub/CourseManager/CourseManager/src/coursemanager/CourseManager.java</file>
+            <file>file:/C:/Users/Evil%20Genious/Documents/GitHub/CourseManager/CourseManager/src/coursemanager/core/Course.java</file>
+            <file>file:/C:/Users/Evil%20Genious/Documents/GitHub/CourseManager/CourseManager/src/resources/prerequisites.csv</file>
+            <file>file:/C:/Users/Evil%20Genious/Documents/GitHub/CourseManager/CourseManager/src/coursemanager/core/Unit.java</file>
         </group>
     </open-files>
 </project-private>
