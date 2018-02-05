@@ -43,15 +43,19 @@ public class Course {
     
     public void loadUnits(){
         
+        //define instance variables
         BufferedReader br = null;
         String line = "";
         String csvSplitBy = ",";
         Unit currentUnit = new Unit();
 
         try {
+            
+            //use the class loader and load the resources as a stream
             ClassLoader classloader = Thread.currentThread().getContextClassLoader();
             InputStream is = classloader.getResourceAsStream("resources/courses.csv");
             
+            //create a buffer reader 
             br  = new BufferedReader(new InputStreamReader(is));
             
             //read the first line of courses and ignore
@@ -66,8 +70,8 @@ public class Course {
                 
                 _units.put(key, new Unit());
                 
-                currentUnit = _units.get(key);
-                
+                //get the unit by key and store int he units hashmap
+                currentUnit = _units.get(key);                
                 currentUnit.setId(key);
                 currentUnit.setName(courseData[1]);
             }
@@ -107,6 +111,7 @@ public class Course {
                 // use comma as separator
                 String []  courseData = line.split(csvSplitBy);
                 
+                //get the units via ket and then insert the prerequisites
                 int key = Integer.parseInt(courseData[0]);
                 int value = Integer.parseInt(courseData[1]);
                 _units.get(key).insertPreReq(key, value);
@@ -128,6 +133,8 @@ public class Course {
         }
     }
     
+    
+    //recursive function to explore the hashmap and resolve dependencies for units
     public Boolean exploreMap(Unit current){
     if(current.getPreReqs().isEmpty() || _completed.contains(current.getId())){
         if(!_completed.contains(current.getId())){
@@ -158,6 +165,7 @@ public class Course {
     return false;
 }
     
+    //iterate over the units and generate a course structure
     public void generateCourseStructure(){
         Iterator it = _units.entrySet().iterator();
         while (it.hasNext()) {
@@ -174,6 +182,7 @@ public class Course {
         return this._incomplete;
     }
     
+    //prin the course structure
     public void printCourseStructure(){
         Queue<Integer> completedUnits =  this.getCompletedUnits();
         Queue<Integer> incompleteUnits =  this.getIncompleteUnits();
@@ -196,6 +205,5 @@ public class Course {
           
           System.out.println(currentUnit.getName());
         }
-
     }
 }
