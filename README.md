@@ -10,3 +10,4 @@ The code generates possible structure based on the pre-requisites of a given uni
 
 The code follows a recursive approach to construct a possible sub-tree of pre requisites using java hashmaps. Then it compiles the possible or not possible structure via backtracking.
 
+[This file](https://github.com/usamaSaddiq/CourseManager/blob/master/CourseManager/description.md) has the description of the thought process involved to achieve the desired outcome.
