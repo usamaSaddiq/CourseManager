@@ -29,7 +29,7 @@ CourseManager  ==> Main java project
 
 ----Course.java    ===> The class which stores the course information such as all units, the completed units and incomplete units. Also provide utility function such as loading all the units from files and then loading the prerequisites into the units and then performing data operations such as generating course structure and printing completed and incomplete courses.
 
-----Unit.java     ===>The unit file stores the unit information for each indivdual units such as the unit name, unit code and the prerequisites a unit contains.
+----Unit.java     ===>The unit file stores the unit information for each indivdual unit such as the unit name, unit code and the prerequisites a unit contains.
 
 
 Generating Course Structure
@@ -38,7 +38,7 @@ Generating a course structure was in particular the hardest part of this challen
 
 2->1,6,11
 
-Unit number two is dependant on unit 1, 6 and 11 in order to be completed. A possible solution is to have a hashmap with unit 2 and it's prerequisites and a function which explores all of the prerequisites of 2 and calls itself passing all the prerequisites as a Unit object sequentially. Once all of the dependencies have been resolved i,e the prerequisites, the unit is pushed into a completed units array which indicates a unit has been completed. Following sudo code represents the above concept:
+Unit number two is dependant on unit 1, 6 and 11 in order to be completed. A possible solution is to have a hashmap with unit 2 and it's prerequisites and a function which explores all of the prerequisites of 2 and calls exploreMap with it's pre-requisites as a parameter, each of them as an instance of the Unit object in a sequential order. Once all of the dependencies have been resolved i,e the prerequisites, the unit is pushed into a completed units array which indicates a unit has been completed. Following pseudo code represents the above concept:
 
 1. Have all of the units in an array and iterate over all of the units one by one passing each unit to a exploreMap function.
 2. Check if the unit is already completed or it does not have any prerequisites. This is basically the base case of recursion which helps in terminating the recursive chain.
@@ -46,6 +46,7 @@ Unit number two is dependant on unit 1, 6 and 11 in order to be completed. A pos
 3. Iterate over the prerequisites of the current unit if it has any and call the function itself with the first prerequisite as a parameter.
 4. Maintain a current call variable to make sure the function does not crach due to infinite recursion i,e when the unit calls itself exploring the recursive chain.
 5. Check if the last operation was successful and add the unit to a completed unit category.
+6. Otherwise return false.
 
 Printing Course Structure
 ==========================
