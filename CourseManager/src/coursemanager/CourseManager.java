@@ -2,6 +2,9 @@
 package coursemanager;
 
 import coursemanager.core.Course;
+import coursemanager.core.Unit;
+import java.util.HashMap;
+import java.util.Queue;
 
 /**
  *
@@ -16,9 +19,9 @@ public class CourseManager {
     public static void main(String[] args) {
         
         Course computerScience = new Course();
-        
-        computerScience.getAllUnits();
-        
+                              
         computerScience.generateCourseStructure();
+        
+        computerScience.printCourseStructure();
     }   
 }
