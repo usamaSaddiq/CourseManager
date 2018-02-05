@@ -30,10 +30,8 @@ public class Course {
     public Course(){
         _units = new HashMap<>();
         _completed = new LinkedList<>();
-        _incomplete = new LinkedList<>();
-        
-        _currentCall = 1;
-        
+        _incomplete = new LinkedList<>();        
+        _currentCall = 1;        
         _flag = true;
         
         loadUnits();
@@ -167,5 +165,37 @@ public class Course {
             this._currentCall = (int) pair.getKey();
             exploreMap((Unit)pair.getValue());
         }
+    }
+    
+    public Queue<Integer> getCompletedUnits(){
+        return this._completed;
+    }
+    public Queue<Integer> getIncompleteUnits(){
+        return this._incomplete;
+    }
+    
+    public void printCourseStructure(){
+        Queue<Integer> completedUnits =  this.getCompletedUnits();
+        Queue<Integer> incompleteUnits =  this.getIncompleteUnits();
+        
+        int subjectNumber = 0;
+        Unit currentUnit = new Unit();
+        System.out.println("***Welcome to the course manager***");
+        System.out.println("Following is the list of units to be completed in order: ");
+        while (!completedUnits.isEmpty()){
+          subjectNumber = completedUnits.poll();
+          currentUnit = _units.get(subjectNumber);
+          
+          System.out.println(currentUnit.getName());
+        }
+        
+        System.out.println("Following is the list of units which cannot be completed: ");
+        while (!incompleteUnits.isEmpty()){
+          subjectNumber = incompleteUnits.poll();
+          currentUnit = _units.get(subjectNumber);
+          
+          System.out.println(currentUnit.getName());
+        }
+
     }
 }
