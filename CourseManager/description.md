@@ -16,19 +16,26 @@ HashMaps provided name value pairs and could be further extended with adding pri
 I came up with the following code structure with each class explained:
 
 CourseManager  ==> Main java project
+
 -src       ===> has all the files for code
+
 -resources ===> has all the resource files i,e csv files
 
 -src
+
 --coursemanager
+
 ---CourseManager.java  ===> Main java class to instantiate the objects and test further functions.
+
 ----Course.java    ===> The class which stores the course information such as all units, the completed units and incomplete units. Also provide utility function such as loading all the units from files and then loading the prerequisites into the units and then performing data operations such as generating course structure and printing completed and incomplete courses.
+
 ----Unit.java     ===>The unit file stores the unit information for each indivdual units such as the unit name, unit code and the prerequisites a unit contains.
 
 
 Generating Course Structure
 =============================
 Generating a course structure was in particular the hardest part of this challenge. I followed a recursive approach to solve the problem via backtracking. Let's take the following structure:
+
 2->1,6,11
 
 Unit number two is dependant on unit 1, 6 and 11 in order to be completed. A possible solution is to have a hashmap with unit 2 and it's prerequisites and a function which explores all of the prerequisites of 2 and calls itself passing all the prerequisites as a Unit object sequentially. Once all of the dependencies have been resolved i,e the prerequisites, the unit is pushed into a completed units array which indicates a unit has been completed. Following sudo code represents the above concept:
