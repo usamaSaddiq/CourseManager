@@ -42,7 +42,7 @@ Unit number two is dependant on unit 1, 6 and 11 in order to be completed. A pos
 
 Printing Course Structure
 ==========================
-The course structure is added to two queues, the completed queue and the incompleted queue. Call each queuein order and print out the units in sequence.
+The course structure is added to two queues, the completed queue and the incompleted queue. Call each queue in order and print out the units in sequence.
 
 
 Running the project
