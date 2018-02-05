@@ -196,15 +196,17 @@ public class Course {
           subjectNumber = completedUnits.poll();
           currentUnit = _units.get(subjectNumber);
           
-          System.out.println(currentUnit.getName());
+          System.out.println(subjectNumber +". " + currentUnit.getName());
         }
         
+        System.out.println("");
+        System.out.println("===================================================");
         System.out.println("Following is the list of units which cannot be completed: ");
         while (!incompleteUnits.isEmpty()){
           subjectNumber = incompleteUnits.poll();
           currentUnit = _units.get(subjectNumber);
           
-          System.out.println(currentUnit.getName());
+          System.out.println(subjectNumber +". " + currentUnit.getName());
         }
     }
 }
