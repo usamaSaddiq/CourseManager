@@ -57,10 +57,3 @@ Running the project
 ===================
 
 The project can be imported into any Java IDE preferrably NetBeans or Eclipse and then compiled and run for execution.
-
-
-Biggest Challenge
-==================
-My biggest challenge was to evaporate the *.java* files and compile them into *.class* files using the java compiler via command line and then reproducing the *.jar* files via command line.
-
-Since unfortunately I did not have access to a linux workstation, therefore I was unsure on how to go about it in linux. I tried getting in touch with the managment but couldn't reach out. Please let me know if there are any problems running the project via an IDE.
