@@ -2,7 +2,7 @@
 Understanding the files
 ============================
 
-The next step was to understand the data patterns existing in the files and select a data structure to store the data in a way that it could be easily accessed by the algorithm for further processing. I was in a dilemma to choose between n-ary trees and hashmaps, while n-ary trees had a straight forward recursive mapping it lacked the consistency I wanted to have in my data set i,e ability to terminate iteration at a certain point or when a certain condition is met e.g if a unit has it's own id in the prerequisites array or certain id of an incomplete unit.
+The first step was to understand the data patterns existing in the test files and select a data structure to store the data in a way that it could be easily accessed by the algorithm for further processing. I was in a dilemma to choose between n-ary trees and hashmaps, while n-ary trees had a straight forward recursive mapping it lacked the consistency I wanted to have in my data set i,e ability to terminate iteration at a certain point or when a certain condition is met e.g if a unit has it's own id in the prerequisites array or certain id of an incomplete unit.
 
 HashMaps provided name value pairs and could be further extended with adding primitive data types. After choosing hashmap for my data stroring needs I had to come up with a project structure to perform operations on the stored data.
 
