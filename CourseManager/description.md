@@ -1,9 +1,3 @@
-Solution
-==========================================
-
-I found the challenge interesting and thought provoking at the same time. It might not be the best solution but I tried to come up with something optimal, easy to read and which utilized the core programming concepts such as recursion, data structures and sequence.
-
-First of all I had to analyse the problem and decipher the challenge at hand.
 
 Understanding the files
 ============================
